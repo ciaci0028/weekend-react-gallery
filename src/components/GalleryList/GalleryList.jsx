@@ -1,15 +1,17 @@
-function GalleryList (galleryList) {
-    console.log('gallery list', galleryList.galleryList);
+function GalleryList ({galleryList}) {
+    console.log('gallery list', galleryList);
     return (
-        <>
+        <div>
             <h1>Gallery is going to go here</h1>
-                {/* <div key={pic.id}>
-                    {galleryList.galleryList.map(pic => (
-                    {pic.description}
-                    {pic.likes}
-                ))};
-                </div> */}
-        </>
+            {galleryList.map(pic => {
+                <div key={pic.id}>
+                        {pic.path}
+                        {pic.description}
+                        {pic.likes}
+                        <button>Test</button>
+                </div>
+            })}
+        </div>
     )
 };
 
