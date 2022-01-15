@@ -1,16 +1,11 @@
+import GalleryItem from '../GalleryItem/GalleryItem'
+
 function GalleryList ({galleryList}) {
-    console.log('gallery list', galleryList);
+    console.log('GalleryList', galleryList);
     return (
         <div>
-            <h1>Gallery is going to go here</h1>
-            {galleryList.map(pic => {
-                <div key={pic.id}>
-                        {pic.path}
-                        {pic.description}
-                        {pic.likes}
-                        <button>Test</button>
-                </div>
-            })}
+            <h1>These are a few of my favorite things...</h1>
+            <GalleryItem galleryList={galleryList}/>
         </div>
     )
 };
