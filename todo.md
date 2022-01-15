@@ -3,6 +3,6 @@
 [ ] GalleryList
     [x] display image
     [x] swap image with description on click
-    [ ] display number of likes
-    [ ] axios put to update likes
+    [x] display number of likes
+    [x] axios put to update likes
 [ ] stylizing
