@@ -4,10 +4,13 @@ function GalleryList ({galleryList}) {
     console.log('GalleryList', galleryList);
     return (
         <div>
-            {galleryList.map(() => {
+            <h1>These are a few of my favorite things!</h1>
+            {galleryList.map((pic) => (
                 <GalleryItem
+                    key={pic.id}
+                    pic={pic}
                 />
-            })}
+            ))}
         </div>
     )
 };
