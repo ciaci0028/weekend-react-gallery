@@ -3,7 +3,11 @@ import './App.css';
 import {useState, useEffect} from 'react';
 import axios from 'axios';
 
+import GalleryList from '../GalleryList/GalleryList'
+
 function App() {
+  // Setting up variables
+  let [galleryList, setGalleryList] = useState([]);
 
   // Only render once
   useEffect( () => {
@@ -18,6 +22,7 @@ function App() {
     axios.get('/gallery')
       .then(response => {
         console.log('get success', response.data);
+        setGalleryList(response.data);
       })
       .catch( (err) => {
         console.log('get failure', err);
@@ -29,8 +34,7 @@ function App() {
         <header className="App-header">
           <h1 className="App-title">Gallery of My Life</h1>
         </header>
-        <p>Gallery goes here</p>
-        <img src="images/goat_small.jpg"/>
+        <GalleryList galleryList={galleryList}/>
       </div>
     );
 }
