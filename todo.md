@@ -1,4 +1,4 @@
-[ ] axios get 
+[x] axios get 
 [x] update images for "database"
 [ ] GalleryList
     [x] display image
