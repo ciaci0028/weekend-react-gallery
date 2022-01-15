@@ -29,12 +29,31 @@ function App() {
       })
   };
 
+  // Axios put for sending likes to server
+  const addLike = (event) => {
+    console.log('in addLike function', event)
+
+    // axios request for put
+    axios.put(`/gallery/like/${event.id}`)
+      .then(response => {
+        console.log('put success', response);
+        fetchGallery();
+      })
+      .catch( (err) => {
+        console.log('put failure', err);
+      })
+  };
+
     return (
       <div className="App">
         <header className="App-header">
           <h1 className="App-title">Gallery of My Life</h1>
         </header>
-        <GalleryList galleryList={galleryList}/>
+        <p className='yo'>Hello this is a test</p>
+        <GalleryList 
+          galleryList={galleryList}
+          addLike={addLike}
+        />
       </div>
     );
 }
