@@ -1,4 +1,5 @@
-import GalleryItem from '../GalleryItem/GalleryItem'
+import GalleryItem from '../GalleryItem/GalleryItem';
+import {ImageList, ImageListItem} from '@mui/material';
 
 function GalleryList ({galleryList, addLike}) {
     console.log('GalleryList', galleryList);
@@ -17,3 +18,5 @@ function GalleryList ({galleryList, addLike}) {
 };
 
 export default GalleryList;
+
+
