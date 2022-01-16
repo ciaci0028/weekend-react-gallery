@@ -1,6 +1,5 @@
 import {useState} from 'react';
 
-
 function GalleryItem ({pic, addLike}) {
 
     // Create a variable to help with flipping the photo
@@ -38,4 +37,8 @@ function GalleryItem ({pic, addLike}) {
 };
 
 export default GalleryItem;
+
+
+
+
 
