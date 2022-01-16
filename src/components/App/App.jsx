@@ -78,7 +78,6 @@ function App() {
         <header className="App-header">
           <h1 className="App-title">Gallery of My Life</h1>
         </header>
-        <p className='yo'>Hello this is a test</p>
         <GalleryList 
           galleryList={galleryList}
           addLike={addLike}

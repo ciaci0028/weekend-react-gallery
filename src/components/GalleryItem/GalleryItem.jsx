@@ -22,18 +22,12 @@ function GalleryItem ({pic, addLike, deletePic}) {
 
 
     return (
-        <div>
-                <div key={pic.id}>
-                    {flipStatus ? 
-                        <img onClick={onImageClick} className="pictures" src={pic.path}></img> :
-                        <p className="description" onClick={onDescriptionClick}>{pic.description}</p> 
-                    }
-                    <br/>Likes: {pic.likes}<br/>
-                <button onClick={(event) => onClickLike(pic)}>👍🏼</button>
-                <button onClick={(event) => deletePic(pic)}>❌</button>
-                </div>
-            <br/>
-        </div>
+            <img
+                src={`${pic.path}?w=161&fit=crop&auto=format`}
+                srcSet={`${pic.path}?w=161&fit=crop&auto=format&dpr=2 2x`}
+                alt={pic.description}
+                loading="lazy"
+            />
     )
 };
 
@@ -43,3 +37,12 @@ export default GalleryItem;
 
 
 
+{/* <div key={pic.id}>
+{flipStatus ? 
+    <img onClick={onImageClick} className="pictures" src={pic.path}></img> :
+    <p className="description" onClick={onDescriptionClick}>{pic.description}</p> 
+}
+<br/>Likes: {pic.likes}<br/>
+<button onClick={(event) => onClickLike(pic)}>👍🏼</button>
+<button onClick={(event) => deletePic(pic)}>❌</button>
+</div> */}
