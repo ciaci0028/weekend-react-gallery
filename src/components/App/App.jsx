@@ -29,6 +29,21 @@ function App() {
       })
   };
 
+  // Axios post for posting new photo
+  const addNewPic = ((newPic) => {
+    console.log('in addNewPic', newPic);
+
+    axios.post('/gallery', newPic)
+      .then((response) => {
+        console.log('post success', response);
+        fetchGallery();
+      })
+      .catch((error) => {
+        console.log('post failure', error);
+      })
+  });
+
+
   // Axios put for sending likes to server
   const addLike = (event) => {
     console.log('in addLike function', event)
@@ -42,6 +57,8 @@ function App() {
       .catch( (err) => {
         console.log('put failure', err);
       })
+
+
   };
 
     return (
@@ -53,6 +70,7 @@ function App() {
         <GalleryList 
           galleryList={galleryList}
           addLike={addLike}
+          addNewPic={addNewPic}
         />
       </div>
     );
