@@ -47,6 +47,7 @@ function GalleryForm ({addNewPic}) {
                 type="text"
                 label="Image URL"
                 variant="outlined"
+                value={newImage}
                 onChange={(event) => setNewImage(event.target.value)}
             />
             <br />
@@ -55,6 +56,7 @@ function GalleryForm ({addNewPic}) {
                 type="text"
                 label="Image description"
                 variant="outlined"
+                value={newDescription}
                 onChange={(event) => setNewDescription(event.target.value)}
             />
             <br />

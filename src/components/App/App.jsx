@@ -30,17 +30,18 @@ function App() {
   };
 
   // Axios post for posting new photo
-  const addNewPic = () => {
-    console.log('in addNewPic');
+  const addNewPic = ((newPic) => {
+    console.log('in addNewPic', newPic);
 
-    axios.post('/gallery')
+    axios.post('/gallery', newPic)
       .then((response) => {
         console.log('post success', response);
+        fetchGallery();
       })
       .catch((error) => {
         console.log('post failure', error);
       })
-  }
+  });
 
 
   // Axios put for sending likes to server

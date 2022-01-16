@@ -23,6 +23,35 @@ router.get('/', (req, res) => {
         })
 }); // END GET Route
 
+// Post route
+router.post('/', (req, res) => {
+    console.log('in post router', req.body);
+
+    const sqlText = `
+        INSERT INTO "gallery"
+            ("path", "description", "likes")
+        VALUES
+            ($1, $2, $3)
+    `;
+
+    const sqlParams = [
+        req.body.path,
+        req.body.description,
+        0
+    ];
+
+    pool.query(sqlText, sqlParams)
+        .then((result) => {
+            console.log('post success');
+            res.sendStatus(200);
+        })
+        .catch((error) => {
+            console.log('post failure', error);
+            res.sendStatus(500);
+        });
+
+}); // End post router
+
 // PUT Route
 router.put('/like/:id', (req, res) => {
     console.log('in put router', req.params);
