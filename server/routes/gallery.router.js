@@ -10,7 +10,7 @@ const pool = require('../modules/pool');
 // GET Route
 router.get('/', (req, res) => {
     console.log('in get router');
-    const sqlText = `SELECT * FROM "gallery"`;
+    const sqlText = `SELECT * FROM "gallery" ORDER BY "path"`;
 
     pool.query(sqlText)
         .then((result) => {
@@ -58,7 +58,7 @@ router.put('/like/:id', (req, res) => {
 
     let sqlText = `
         UPDATE "gallery"
-        SET "likes" = likes++
+        SET "likes" = likes + 1
         WHERE "id" = $1
     `;
 
@@ -76,6 +76,30 @@ router.put('/like/:id', (req, res) => {
             res.sendStatus(500);
         })
 }); // END PUT Route
+
+// Delete router
+router.delete('/:id', (req, res) => {
+    console.log('in delete router', req.params.id);
+
+    let sqlText = `
+    DELETE FROM "gallery"
+    WHERE "id" = $1
+    `;
+
+    let sqlParams = [
+        req.params.id
+    ];
+
+    pool.query(sqlText, sqlParams)
+        .then((result) => {
+            console.log('delete success');
+            res.sendStatus(200);
+        })
+        .catch((error) => {
+            console.log('delete failure', error);
+            res.sendStatus(500);
+        });
+}); // End delete router
 
 module.exports = router;
 

@@ -1,6 +1,6 @@
 import {useState} from 'react';
 
-function GalleryItem ({pic, addLike}) {
+function GalleryItem ({pic, addLike, deletePic}) {
 
     // Create a variable to help with flipping the photo
     const [flipStatus, setFlipStatus] = useState(true);
@@ -29,7 +29,8 @@ function GalleryItem ({pic, addLike}) {
                         <p className="description" onClick={onDescriptionClick}>{pic.description}</p> 
                     }
                     <br/>Likes: {pic.likes}<br/>
-                <button onClick={(event) => onClickLike(pic)}>Like</button>
+                <button onClick={(event) => onClickLike(pic)}>👍🏼</button>
+                <button onClick={(event) => deletePic(pic)}>❌</button>
                 </div>
             <br/>
         </div>

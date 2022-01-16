@@ -2,7 +2,7 @@ import GalleryItem from '../GalleryItem/GalleryItem';
 import {ImageList, ImageListItem} from '@mui/material';
 import GalleryForm from '../GalleryForm/GalleryForm'
 
-function GalleryList ({galleryList, addLike, addNewPic}) {
+function GalleryList ({galleryList, addLike, addNewPic, deletePic}) {
     console.log('GalleryList', galleryList);
     return (
         <div>
@@ -15,6 +15,7 @@ function GalleryList ({galleryList, addLike, addNewPic}) {
                     key={pic.id}
                     pic={pic}
                     addLike={addLike}
+                    deletePic={deletePic}
                 />
             ))}
         </div>

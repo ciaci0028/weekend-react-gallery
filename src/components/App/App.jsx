@@ -27,7 +27,7 @@ function App() {
       .catch( (err) => {
         console.log('get failure', err);
       })
-  };
+  }; // End axios get
 
   // Axios post for posting new photo
   const addNewPic = ((newPic) => {
@@ -41,7 +41,7 @@ function App() {
       .catch((error) => {
         console.log('post failure', error);
       })
-  });
+  }); // End axios post
 
 
   // Axios put for sending likes to server
@@ -57,9 +57,21 @@ function App() {
       .catch( (err) => {
         console.log('put failure', err);
       })
+  }; // End axios Put
 
+  // axios delete
+    const deletePic = (event) => {
+      console.log('in delete pic', event);
 
-  };
+      axios.delete(`gallery/${event.id}`)
+        .then((response) => {
+          console.log('delete success', response);
+          fetchGallery();
+        })
+        .catch((error) => {
+          console.log('delete failure', error);
+        })
+    }
 
     return (
       <div className="App">
@@ -71,6 +83,7 @@ function App() {
           galleryList={galleryList}
           addLike={addLike}
           addNewPic={addNewPic}
+          deletePic={deletePic}
         />
       </div>
     );
