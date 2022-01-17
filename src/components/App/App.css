@@ -47,9 +47,21 @@ body {
 .likeButton {
   font-size: 150%;
   margin-right: 10px;
+  border: 3px solid rgb(163, 179, 231);
+  background-color:rgb(163, 179, 231);
+  width: 60px;
+  border-radius: 20%;
 }
 
 .deleteButton{
   font-size: 150%;
-  margin-left: 10px;
+  margin-right: 10px;
+  border: 3px solid rgb(163, 179, 231);
+  background-color:rgb(163, 179, 231);
+  width: 60px;
+  border-radius: 20%;
+}
+
+.textField {
+  background-color: rgb(233, 231, 221);
 }

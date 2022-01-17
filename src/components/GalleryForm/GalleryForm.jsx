@@ -43,19 +43,21 @@ function GalleryForm ({addNewPic}) {
         <Typography variant="h5">Add New Photo Below</Typography>
         <form className="form" onSubmit={handleSubmit}>
             <TextField
-                style={{ width: "200px", margin: "5px" }}
+                style={{ width: "400px", margin: "5px" }}
                 type="text"
                 label="Image URL"
                 variant="outlined"
+                className="textField"
                 value={newImage}
                 onChange={(event) => setNewImage(event.target.value)}
             />
             <br />
             <TextField
-                style={{ width: "200px", margin: "5px" }}
+                style={{ width: "400px", margin: "5px" }}
                 type="text"
                 label="Image description"
                 variant="outlined"
+                className="textField"
                 value={newDescription}
                 onChange={(event) => setNewDescription(event.target.value)}
             />
