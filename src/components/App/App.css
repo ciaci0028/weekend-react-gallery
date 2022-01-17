@@ -24,6 +24,17 @@
   width: 85%;
 }
 
+.description {
+  word-wrap: normal;
+  height: 300px;
+  width: 400px;
+  background-image: url("https://media.istockphoto.com/vectors/abstract-wool-rug-flooring-texture-seamless-vector-repeat-background-vector-id1299788670?k=20&m=1299788670&s=612x612&w=0&h=gfsX7MrmmBSC-l5EipzWkUNMUG5nhmWnHRs7Lp1_fb4=");
+  text-align: center;
+  padding-top: 200px;
+  font-family: fantasy;
+  font-size: 20px;
+}
+
 .likeText {
   font-family: fantasy;
   font-size: 30px;

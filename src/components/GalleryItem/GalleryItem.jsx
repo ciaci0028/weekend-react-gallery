@@ -27,7 +27,7 @@ function GalleryItem ({pic, addLike, deletePic}) {
             <div>
             {flipStatus ? 
                 <img
-                    onclick={onImageClick}
+                    onClick={onImageClick}
                     className="photos"
                     src={`${pic.path}?w=161&fit=crop&auto=format`}
                     srcSet={`${pic.path}?w=161&fit=crop&auto=format&dpr=2 2x`}
