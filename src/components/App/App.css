@@ -19,3 +19,22 @@
   padding: 10px;
 }
 
+.photos {
+  height: 85%;
+  width: 85%;
+}
+
+.likeText {
+  font-family: fantasy;
+  font-size: 30px;
+}
+
+.likeButton {
+  font-size: 150%;
+  margin-right: 10px;
+}
+
+.deleteButton{
+  font-size: 150%;
+  margin-left: 10px;
+}
