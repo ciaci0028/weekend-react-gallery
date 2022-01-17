@@ -41,7 +41,7 @@ function GalleryForm ({addNewPic}) {
         <div className="App">
 
         <Typography variant="h5">Add New Photo Below</Typography>
-        <form onSubmit={handleSubmit}>
+        <form className="form" onSubmit={handleSubmit}>
             <TextField
                 style={{ width: "200px", margin: "5px" }}
                 type="text"
