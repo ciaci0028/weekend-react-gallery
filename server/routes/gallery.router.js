@@ -10,7 +10,7 @@ const pool = require('../modules/pool');
 // GET Route
 router.get('/', (req, res) => {
     console.log('in get router');
-    const sqlText = `SELECT * FROM "gallery" ORDER BY "path"`;
+    const sqlText = `SELECT * FROM "gallery" ORDER BY "id"`;
 
     pool.query(sqlText)
         .then((result) => {

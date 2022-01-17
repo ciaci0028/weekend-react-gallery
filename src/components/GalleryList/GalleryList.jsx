@@ -10,18 +10,20 @@ function GalleryList ({galleryList, addLike, addNewPic, deletePic}) {
                 addNewPic={addNewPic}
             />
             <h1>These are a few of my favorite things!</h1>
-            {galleryList.map((pic) => (
-                <GalleryItem
-                    key={pic.id}
-                    pic={pic}
-                    addLike={addLike}
-                    deletePic={deletePic}
-                />
-            ))}
+            <ImageList className="container" sx={{ width: 1500, height: 1350 }} variant="masonry" cols={3} gap={8}>
+                {galleryList.map((pic) => (
+                    <GalleryItem 
+                        pic={pic}
+                        addLike={addLike}
+                        deletePic={deletePic}
+                    />
+                ))}
+            </ImageList>
         </div>
     )
 };
 
 export default GalleryList;
+
 
 
